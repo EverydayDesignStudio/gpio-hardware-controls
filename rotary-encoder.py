@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from RPi import GPIO
+from time import sleep
 
 clk = 21
 cnt = 20
@@ -22,4 +23,3 @@ while True:
             counter -= 1
         print(counter)
     clkLastState = clkState
-
