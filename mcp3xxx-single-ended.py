@@ -10,7 +10,16 @@ cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP.MCP3008(spi, cs)
 
 chan = AnalogIn(mcp, MCP.P0)
+chan1 = AnalogIn(mcp, MCP.P1)
+chan2 = AnalogIn(mcp, MCP.P2)
+chan3 = AnalogIn(mcp, MCP.P3)
+chan4 = AnalogIn(mcp, MCP.P4)
 
 while True:
     print('Raw ADC Value: ', chan.value)
+    print('Chan1: ', chan1.value)
+    print('Chan2: ', chan2.value)
+    print('Chan3: ', chan3.value)
+    print('Chan4: ', chan4.value)
+
     time.sleep(0.5)
