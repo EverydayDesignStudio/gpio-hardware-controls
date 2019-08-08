@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+# ADXL337 test script for use with Capra Projector
+# Note that this is 'hacky' because the pitch and roll values are not
+# correct. However, they are consistent, so it is still possible to 
+# derive the right orientation of the projector, particularly because
+# fidelity does not need to be very high
+
 import sys
 import time
 import math
