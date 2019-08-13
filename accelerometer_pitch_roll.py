@@ -18,7 +18,7 @@ import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
 
 spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
-cs = digitalio.DigitalInOut(board.D5)
+cs = digitalio.DigitalInOut(board.D8)
 mcp = MCP.MCP3008(spi, cs)
 
 
@@ -41,9 +41,9 @@ try:
         #print('Chan3: ', chan3.value)
         #print('Chan4: ', chan4.value)
         
-        chan0 = AnalogIn(mcp, MCP.P0)
-        chan1 = AnalogIn(mcp, MCP.P2)
-        chan2 = AnalogIn(mcp, MCP.P4)
+        chan0 = AnalogIn(mcp, MCP.P7)
+        chan1 = AnalogIn(mcp, MCP.P6)
+        chan2 = AnalogIn(mcp, MCP.P5)
         ax = chan0.value
         ay = chan1.value
         az = chan2.value
