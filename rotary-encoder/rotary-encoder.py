@@ -2,9 +2,10 @@
 
 from RPi import GPIO
 from time import sleep
+from input_correct_data import *
 
-clk = 21
-cnt = 20
+clk = input_int('Input pin of clockwise: ')
+cnt = input_int('Input pin of counterclockwise: ')
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)

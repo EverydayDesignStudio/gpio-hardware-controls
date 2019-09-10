@@ -3,11 +3,16 @@
 import RPi.GPIO as GPIO
 import time
 import sys
+from input_correct_data import *
+
+pos1 = input_int('Input pin 1: ')
+pos2 = input_int('Input pin 2: ')
+pos3 = input_int('Input pin 3: ')
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(13, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(19, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(pos1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(pos2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(pos3, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 def write(line):
@@ -17,10 +22,10 @@ def write(line):
 write("--- Rotary Switch Values ---")
 
 while True:
-    input13 = GPIO.input(13)
-    input19 = GPIO.input(19)
-    input26 = GPIO.input(26)
-    output = '\n13: {}, \n19: {}, \n26: {}'.format(input13, input19, input26)
+    input1 = GPIO.input(pos1)
+    input2 = GPIO.input(pos2)
+    input3 = GPIO.input(pos3)
+    output = '\n{}: {}, \n{}: {}, \n{}: {}'.format(pos1, input1, pos2, input2, pos3, input3)
     time.sleep(0.05)
 
     output = output.replace("\n", "\n\033[K")

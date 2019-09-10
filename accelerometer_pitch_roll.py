@@ -34,28 +34,28 @@ try:
         # ax = acc_values[0]
         # ay = acc_values[1]
         # az = acc_values[2]
-        
+
         #print('Raw ADC Value: ', chan.value)
         #print('Chan1: ', chan1.value)
         #print('Chan2: ', chan2.value)
         #print('Chan3: ', chan3.value)
         #print('Chan4: ', chan4.value)
-        
+
         chan0 = AnalogIn(mcp, MCP.P7)
         chan1 = AnalogIn(mcp, MCP.P6)
         chan2 = AnalogIn(mcp, MCP.P5)
         ax = chan0.value
         ay = chan1.value
         az = chan2.value
-        
+
         pitch = 180 * math.atan(ax/math.sqrt(ay*ay + az*az))/math.pi
         roll = 180 * math.atan(ay/math.sqrt(ax*ax + az*az))/math.pi
-        
+
         #if roll > -45 and roll < 45:
         #    orientation = 'landscape'
         #elif roll >= 45 or roll <= -45:
         #    orientation = 'vertical'
-        
+
         if pitch > 35 and roll < 34:
                 orientation = 'correct vertical'
         elif pitch < 31 and roll > 34:

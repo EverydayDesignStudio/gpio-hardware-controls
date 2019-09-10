@@ -4,19 +4,17 @@ from RPi import GPIO
 from datetime import datetime
 from time import sleep
 import queue
+from input_correct_data import *
 
-PERIOD = 500
-
-clk = 21
-cnt = 20
-
+clk = input_int('Input pin of clockwise: ')
+cnt = input_int('Input pin of counterclockwise: ')
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(cnt, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
+PERIOD = 500
 counter = 0
 clkLastState = GPIO.input(clk)
-
 last_time = datetime.now().timestamp()
 # q = queue.Queue(10)
 l = list()
