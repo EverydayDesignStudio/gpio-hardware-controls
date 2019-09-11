@@ -7,6 +7,9 @@ from input_correct_data import *
 clk = input_int('Input pin of clockwise: ')
 cnt = input_int('Input pin of counterclockwise: ')
 
+# clk = int(input('Input pin of clockwise: '))
+# cnt = int(input('Input pin of counterclockwise: '))
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(cnt, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
