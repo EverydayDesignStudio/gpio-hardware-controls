@@ -5,7 +5,8 @@ import time
 import sys
 from input_correct_data import *
 
-BUTTON = input_int('Input button pin: ')
+# BUTTON = input_int('Input button pin: ')
+BUTTON = int(input('Input button pin: '))
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
@@ -18,7 +19,7 @@ write("--- Push Button Values ---")
 
 while True:
     input1 = GPIO.input(BUTTON)
-    if input1 is False:
+    if input1==False:
         output = '\nButton is pressed'
     else:
         output = '\nButton is not pressed'
