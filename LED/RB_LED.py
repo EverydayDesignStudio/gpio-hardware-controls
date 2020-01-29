@@ -60,24 +60,34 @@ def blink_red_quick():
     blink(LED_RED, 10, 0.1)
 
 
+def blink_purple_new_hike():
+    for i in range(6):
+        turn_purple()
+        time.sleep(.15)
+        turn_off()
+        time.sleep(.15)
+
+
 # Main Loop
 # ------------------------------------------------------------------------------
 def main():
     print("🚨 Starting LED Testing 🚨")
     turn_off()
-    blink_red_quick()
-    time.sleep(2)
 
-    turn_blue()
-    time.sleep(3)
-    turn_off()
-    time.sleep(1)
-    turn_red()
-    time.sleep(3)
-    turn_off()
-    turn_purple()
-    time.sleep(3)
-    turn_off()
+    blink_purple_new_hike()
+
+    # blink_red_quick()
+    # time.sleep(2)
+    # turn_blue()
+    # time.sleep(3)
+    # turn_off()
+    # time.sleep(1)
+    # turn_red()
+    # time.sleep(3)
+    # turn_off()
+    # turn_purple()
+    # time.sleep(3)
+    # turn_off()
 
     # blink(LED_RED, 1, 0.3)
     # time.sleep(1)

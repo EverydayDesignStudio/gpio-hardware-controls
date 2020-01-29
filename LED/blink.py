@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
+
 import RPi.GPIO as gpio
 import time
-from input_correct_data import *
 
-LED = input_int('Input pin of LED: ')
+LED = int(input('Input pin of LED: '))
+
+gpio.setwarnings(False)     # Turn off GPIO warnings
 gpio.setmode(gpio.BCM)
 gpio.setup(LED, gpio.OUT)
 
