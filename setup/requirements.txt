@@ -1,0 +1,7 @@
+adafruit-circuitpython-mcp3xxx
+adafruit-circuitpython-ds3231
+gpiozero
+picamera
+pigpio
+pylint
+RPi.GPIO
