@@ -5,8 +5,8 @@ import threading
 from time import sleep
 
 # GPIO Ports
-Enc_A = 21                      # Encoder input A: input GPIO 4
-Enc_B = 20                      # Encoder input B: input GPIO 14
+Enc_A = input_int('Input pin of clockwise: ')
+Enc_B = input_int('Input pin of counterclockwise: ')
 
 Rotary_counter = 0  			# Start counting from 0
 Current_A = 1					# Assume that rotary switch is not
