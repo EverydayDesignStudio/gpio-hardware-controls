@@ -9,6 +9,7 @@ bcm_pins_left = [2, 3, 4, 17, 27, 22, 10, 9, 11, 0, 5, 6, 13, 19, 26]
 bcm_pins_right = [14, 15, 18, 23, 24, 25, 8, 7, 1, 12, 16, 20, 21]
 # bcm_pins_all = [2, 3, 4, 17, 27, 22, 10, 9, 11, 0, 5, 6, 13, 19, 26, 14, 15, 18, 23, 24, 25, 8, 7, 1, 12, 16, 20, 21]
 
+SPEED = int(input('Input number of seconds to stay on each pin: '))
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 BUTTON = 2
@@ -38,7 +39,6 @@ def get_next_pin(c: int):
 
 def main():
     write("---Iterates through every GPIO pin to ensure proper connections---\n")
-    SPEED = 6  # time per pin in seconds
     counter = 0
     timer = time.time()
 
