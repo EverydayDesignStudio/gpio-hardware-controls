@@ -22,11 +22,18 @@ def main():
 
     pixels = neopixel.NeoPixel(PIN, LENGTH)  # Raspberry Pi wiring!
 
-    pixels[0] = (255, 0, 0)  # To light up the first NeoPixel red
-    time.sleep(2)
-    pixels[LENGTH-1] = (0, 0, 255)  # Light up the last NeoPixel blue
-    time.sleep(2)
-    pixels.fill((100, 100, 100))  # To light up all the NeoPixels light white
+    # Light up the first NeoPixel red
+    pixels[0] = (255, 0, 0)
+    time.sleep(5)
+    pixels[0] = (0, 0, 0)
+    # Light up the last NeoPixel blue
+    pixels[LENGTH-1] = (0, 0, 255)
+    time.sleep(5)
+    # Light up all the NeoPixels to a light white
+    pixels.fill((100, 100, 100))
+    time.sleep(15)
+    # Turn off the NeoPixels
+    pixels.fill((0, 0, 0))
 
 
 if __name__ == "__main__":
