@@ -17,6 +17,7 @@ import board
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
 
+
 spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
 cs = digitalio.DigitalInOut(board.D8)
 mcp = MCP.MCP3008(spi, cs)
@@ -25,6 +26,7 @@ mcp = MCP.MCP3008(spi, cs)
 def write(line):
     sys.stdout.write(line)
     sys.stdout.flush()
+
 
 write("--- ADXL337 Accelerometer with MCP3008 ---")
 
@@ -57,11 +59,11 @@ try:
         #    orientation = 'vertical'
 
         if pitch > 35 and roll < 34:
-                orientation = 'correct vertical'
+            orientation = 'correct vertical'
         elif pitch < 31 and roll > 34:
-                orientation = 'upside down vertical'
+            orientation = 'upside down vertical'
         else:
-                orientation = 'horizontal'
+            orientation = 'horizontal'
 
         output = """
 Accelerometer: {x}g {y}g {z}g
@@ -75,9 +77,9 @@ Orientation: {o}
             x=ax,
             y=ay,
             z=az,
-            p = pitch,
-            r = roll,
-            o = orientation
+            p=pitch,
+            r=roll,
+            o=orientation
         )
 
         output = output.replace("\n", "\n\033[K")
