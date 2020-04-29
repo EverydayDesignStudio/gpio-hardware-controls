@@ -21,7 +21,14 @@ write("--- Polulu LSM303D Accelerometer ---")
 
 try:
     while True:
-        xyz = lsm.accelerometer()
+        try:
+            xyz = lsm.accelerometer()
+        except Exception as error:
+            time.sleep(2.0)
+            continue
+            # raise Exception("Oops! There was no valid accelerometer data.")
+
+        # xyz = lsm.accelerometer()
 
         ax = round(xyz[0], 7)
         ay = round(xyz[1], 7)
@@ -46,28 +53,21 @@ try:
                 orientation = 'horizontal'
 
         output = """
-Accelerometer: {x}g {y}g {z}g
+    Accelerometer: {x}g {y}g {z}g
 
-Pitch: {p}
-Roll: {r}
+    Pitch: {p}
+    Roll: {r}
 
-Orientation: {o}
+    Orientation: {o}
 
-""".format(
-            x=ax,
-            y=ay,
-            z=az,
-            p=pitch,
-            r=roll,
-            o=orientation
-        )
+    """.format(x=ax, y=ay, z=az, p=pitch, r=roll, o=orientation)
 
         output = output.replace("\n", "\n\033[K")
         write(output)
         lines = len(output.split("\n"))
         write("\033[{}A".format(lines - 1))
 
-        time.sleep(.1)
+        time.sleep(1)
 
 except KeyboardInterrupt:
     pass
