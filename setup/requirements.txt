@@ -1,0 +1,14 @@
+adafruit-blinka
+adafruit-circuitpython-adxl34x
+adafruit-circuitpython-ds3231
+adafruit-circuitpython-mcp3xxx
+adafruit-circuitpython-neopixel
+getch
+gpiozero
+lsm303d
+picamera
+pigpio
+Pillow
+pylint
+RPi.GPIO
+rpi_ws281x
