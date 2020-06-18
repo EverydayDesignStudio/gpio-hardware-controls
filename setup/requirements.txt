@@ -1,14 +1,16 @@
 adafruit-blinka
 adafruit-circuitpython-adxl34x
-adafruit-circuitpython-ds3231
-adafruit-circuitpython-mcp3xxx
+adafruit-circuitpython-ds3231       # Real Time Clock
+adafruit-circuitpython-mcp3xxx      # Analog to Digital 
+adafruit-circuitpython-mpl3115a2    # Altimeter
 adafruit-circuitpython-neopixel
 getch
 gpiozero
 lsm303d
-picamera
+picamera                            # Pi Cameras
 pigpio
 Pillow
+psutil                              # Free space on disk
 pylint
-RPi.GPIO
+RPi.GPIO                            # GPIO for Raspberry Pi
 rpi_ws281x
