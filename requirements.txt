@@ -1,0 +1,8 @@
+adafruit-circuitpython-ds3231           # Real Time Clock
+adafruit-circuitpython-mcp3xxx          # Analog to Digital 
+adafruit-circuitpython-mpl3115a2        # Altimeter
+gpiozero
+picamera                                # Pi Cameras
+psutil                                  # Free space on disk
+RPi.GPIO                                # GPIO for Raspberry Pi
+smbus                                   
