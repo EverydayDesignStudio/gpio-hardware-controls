@@ -30,7 +30,7 @@ def main():
     while True:
         hall_effect_stat = ""
 
-        if GPIO.input(g.HALL_EFFECT_PIN) == 0:
+        if GPIO.input(HALL_PIN) == 0:
             hall_effect_stat = 'Magnet Near'
 
         output = """
